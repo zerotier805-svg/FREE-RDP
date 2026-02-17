@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Enable RDP
       run: |
-        net user runneradmin akumau
+        net user runneradmin RdpAcc3ss!2026#Win
         net localgroup administrators runneradmin /add
 
     - name: Download Ngrok
