@@ -10,7 +10,7 @@ jobs:
     - name: Enable RDP
       run: |
         net user runneradmin RdpAcc3ss!2026#Win
-        net localgroup administrators runneradmin /add
+        net localgroup administrators runneradmin /add || echo "Already admin"
 
     - name: Download Ngrok
       run: |
