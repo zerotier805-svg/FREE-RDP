@@ -1,0 +1,22 @@
+name: Windows RDP
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Enable RDP
+      run: |
+        net user runneradmin akumau
+        net localgroup administrators runneradmin /add
+
+    - name: Download Ngrok
+      run: |
+        choco install ngrok -y
+
+    - name: Start Ngrok
+      run: |
+        ngrok authtoken 39mBP3p9moblc8lKDnMHOEzPWUG_5GdTgu9ZcvcNnw1gJNSsL
+        ngrok tcp 3389
